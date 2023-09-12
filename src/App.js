@@ -3,11 +3,13 @@ import { useTranslation } from 'react-i18next';
 
 function App() {
   const { t } = useTranslation();
+  const tg = window.Telegram.WebApp;
 
+  console.log(tg?.initData)
 
   return (
-    <div className="d-flex flex-column p-2 justify-content-center">
-      <h1 className="fs-3 text-center mb-3">{t('greeting')}</h1>
+    <div className="d-flex flex-column p-2 justify-content-center container-sm">
+      <h1 className="fs-5 text-center mb-2">{t('greeting')}</h1>
       <Buttons />
     </div>
   );

@@ -8,7 +8,7 @@ const Buttons = () => {
   const { i18n } = useTranslation();
 
   return (
-    <ButtonGroup aria-label="Basic example" size="lg">
+    <ButtonGroup aria-label="Basic example" size="sm">
       <Button 
         variant={activeBtn === 'en' ? "primary" : "secondary"}
         value='en'
