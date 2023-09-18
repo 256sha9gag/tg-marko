@@ -1,6 +1,15 @@
 const es = {
   translation: {
-    greeting: 'Bienvenido al bot de intercambio. Para empezar, seleccione su idioma',
+    greeting: 'Hola, ',
+    create: 'Crear una solicitud',
+    give: 'Dar',
+    take: 'Tomar',
+    selectAsset: 'Seleccione un activo',
+    amount: 'Introduzca la cantidad...',
+    info: 'Introduzca información adicional...',
+    country: 'Seleccione un país...',
+    city: 'Seleccione una ciudad...',
+    submit: 'Enviar solicitud',
   },
 };
 

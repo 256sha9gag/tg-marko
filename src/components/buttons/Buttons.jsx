@@ -4,11 +4,11 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import { useTranslation } from 'react-i18next';
 
 const Buttons = () => {
-  const [activeBtn, setActiveBtn] = useState('')
+  const [activeBtn, setActiveBtn] = useState('en')
   const { i18n } = useTranslation();
 
   return (
-    <ButtonGroup aria-label="Basic example" size="sm">
+    <ButtonGroup aria-label="lang" size="sm" className='d-flex'>
       <Button 
         variant={activeBtn === 'en' ? "primary" : "secondary"}
         value='en'

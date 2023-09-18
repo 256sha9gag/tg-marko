@@ -1,1 +1,9 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
+
+.bg {
+  background: var(--tg-theme-bg-color);
+}
+
+.textColor {
+  color: var(--tg-theme-text-color);
+}
