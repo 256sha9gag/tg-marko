@@ -8,8 +8,10 @@ const en = {
     amount: 'Enter the amount...',
     info: 'Enter additional information...',
     country: 'Select a country...',
-    city: 'Select a city...',
+    city: 'Enter your city...',
     submit: 'Send a request',
+    interestRate: 'Specify the interest rate',
+    denomination: 'Select the denomination of the banknotes',
   },
 };
 
