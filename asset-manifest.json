@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/tg-marko/static/css/main.748c6abd.css",
-    "main.js": "/tg-marko/static/js/main.e703de77.js",
+    "main.js": "/tg-marko/static/js/main.bb3aec88.js",
     "index.html": "/tg-marko/index.html",
     "main.748c6abd.css.map": "/tg-marko/static/css/main.748c6abd.css.map",
-    "main.e703de77.js.map": "/tg-marko/static/js/main.e703de77.js.map"
+    "main.bb3aec88.js.map": "/tg-marko/static/js/main.bb3aec88.js.map"
   },
   "entrypoints": [
     "static/css/main.748c6abd.css",
-    "static/js/main.e703de77.js"
+    "static/js/main.bb3aec88.js"
   ]
 }
