@@ -1,17 +1,18 @@
 const en = {
   translation: {
     greeting: 'Hello, ',
-    create: 'Create a request',
+    create: 'Choose a language, fill out the form and submit the request.',
+    typeOrder: 'Select the type of request:',
     give: 'Give',
     take: 'Take',
-    selectAsset: 'Select an asset',
-    amount: 'Enter the amount...',
+    selectAsset: 'Select an asset:',
+    amount: 'Enter the amount:',
     info: 'Enter additional information...',
-    country: 'Select a country...',
-    city: 'Enter your city...',
+    country: 'Select your country from the list:',
+    city: 'Enter your city:',
     submit: 'Send a request',
-    interestRate: 'Specify the interest rate',
-    denomination: 'Select the denomination of the banknotes',
+    interestRate: 'The interest rate of the surcharge:',
+    denomination: 'Select the denomination of the banknotes:',
   },
 };
 

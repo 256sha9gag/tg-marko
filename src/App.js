@@ -24,20 +24,20 @@ const App = () => {
       </h1></Col>
       </Row>
       <Row>
-        <Col sm={{ span: 2, offset: 8 }}>
-          <Buttons />
-        </Col>
-      </Row>
-      <Row>
         <Col>
           <h2
-            className="h6 pt-5"
+            className="h6 pt-2 text-center textColor"
           >
             {t('create')}
           </h2>
         </Col>
       </Row>
-      <FormWrapper />
+      <Row className="mb-2">
+        <Col sm={{ span: 2, offset: 8 }}>
+          <Buttons />
+        </Col>
+      </Row>
+      <FormWrapper username={tg?.initDataUnsafe?.user?.username} />
     </Container>
   );
 }
