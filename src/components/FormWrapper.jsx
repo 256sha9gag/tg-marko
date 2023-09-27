@@ -7,7 +7,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import CountyAndCity from './CountyAndCity';
 
-const FormWrapper = ({ username }) => {
+const FormWrapper = ({ username, tg }) => {
   const { t } = useTranslation();
   const [orderType, setOrderType] = useState('');
   const [asset, setAssets] = useState('');
@@ -19,12 +19,11 @@ const FormWrapper = ({ username }) => {
   const [comment, setComment] = useState('');
   
   const handleSubmit = async (e) => {
-    e.preventDefault();
-
     try {
+      const id = generateUniqueId()
       const res = await axios.post('https://markoengine.space/data', {
         username: username,
-        id: generateUniqueId(),
+        id: id,
         orderType,
         asset,
         denomination,
@@ -34,8 +33,19 @@ const FormWrapper = ({ username }) => {
         city,
         comment,
       });
+      setOrderType('');
+      setAssets('');
+      setAmount('');
+      setDenomination('');
+      setRate('');
+      setCountry([]);
+      setCity('');
+      setComment('');
+      tg.sendData(`${t('orderCreate')} № ${id}`)
+      tg.close();
       console.log(res);
     } catch (error) {
+      tg.sendData(`${t('orderCreate')}`)
       console.log(error)
     }
   };

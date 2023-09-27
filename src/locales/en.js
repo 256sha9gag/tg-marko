@@ -13,6 +13,8 @@ const en = {
     submit: 'Send a request',
     interestRate: 'The interest rate of the surcharge:',
     denomination: 'Select the denomination of the banknotes:',
+    orderCreate: 'Request created',
+    error: 'An error has occurred, try repeating the request or contact support.',
   },
 };
 

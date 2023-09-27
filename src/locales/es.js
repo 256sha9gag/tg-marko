@@ -13,6 +13,8 @@ const es = {
     submit: 'Enviar solicitud',
     interestRate: 'Tasa de interés del copago:',
     denomination: 'Seleccione la denominación de los billetes:',
+    orderCreate: 'Consulta creada',
+    error: 'Se ha producido un error, intente repetir la solicitud o póngase en contacto con el soporte técnico.',
   },
 };
 

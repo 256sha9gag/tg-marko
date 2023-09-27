@@ -37,7 +37,7 @@ const App = () => {
           <Buttons />
         </Col>
       </Row>
-      <FormWrapper username={tg?.initDataUnsafe?.user?.username} />
+      <FormWrapper username={tg?.initDataUnsafe?.user?.username} tg={tg} />
     </Container>
   );
 }
