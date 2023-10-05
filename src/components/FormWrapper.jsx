@@ -8,7 +8,7 @@ import Button from 'react-bootstrap/Button';
 import CountyAndCity from './CountyAndCity';
 import { useTelegram } from '../hooks/useTelegram.js';
 
-const FormWrapper = ({ username, setIsSubmit }) => {
+const FormWrapper = ({ username, setIsSubmit, isSubmit }) => {
   const { t } = useTranslation();
   const { queryId } = useTelegram();
   const [orderType, setOrderType] = useState('');
@@ -22,6 +22,7 @@ const FormWrapper = ({ username, setIsSubmit }) => {
   
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmit(true);
     try {
       const id = generateUniqueId()
       const res = await axios.post('https://markoengine.space/data', {
@@ -37,7 +38,6 @@ const FormWrapper = ({ username, setIsSubmit }) => {
         comment,
         queryId
       });
-      setIsSubmit(true);
       setOrderType('');
       setAssets('');
       setAmount('');

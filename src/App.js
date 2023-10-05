@@ -41,7 +41,7 @@ const App = () => {
         </Col>
       </Row>
       {!isSubmit ? (
-        <FormWrapper username={tg?.initDataUnsafe?.user?.username} setIsSubmit={setIsSubmit} />
+        <FormWrapper username={tg?.initDataUnsafe?.user?.username} setIsSubmit={setIsSubmit} isSubmit={isSubmit} />
       ) : (
         <Success />
       )}

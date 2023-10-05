@@ -29,7 +29,7 @@ const CountyAndCity = ({country, setCountry, city, setCity, handleKeyDown}) => {
       </FormGroup>
       <FormGroup>
         <Form.Label className='textColor' htmlFor='city'>{t('city')}</Form.Label>
-        <Form.Control id='city' onKeyDown={handleKeyDown} value={city} onChange={(e) => setCity(e.target.value)} className='mb-3' type="text" placeholder="Moscow"/>
+        <Form.Control required id='city' onKeyDown={handleKeyDown} value={city} onChange={(e) => setCity(e.target.value)} className='mb-3' type="text" placeholder="Moscow"/>
       </FormGroup>
     </>
   );
