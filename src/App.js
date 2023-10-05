@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { useTranslation } from 'react-i18next';
 
+import { useTelegram } from './hooks/useTelegram';
 import Buttons from "./components/buttons/Buttons";
 import FormWrapper from './components/FormWrapper';
+import Success from './components/Success';
 
 
 const App = () => {
+  const [isSubmit, setIsSubmit] = useState(false);
   const { t } = useTranslation();
-  const tg = window.Telegram.WebApp;
+  const { tg } = useTelegram();
 
   return (
     <Container 
@@ -37,7 +40,11 @@ const App = () => {
           <Buttons />
         </Col>
       </Row>
-      <FormWrapper username={tg?.initDataUnsafe?.user?.username} tg={tg} />
+      {!isSubmit ? (
+        <FormWrapper username={tg?.initDataUnsafe?.user?.username} setIsSubmit={setIsSubmit} />
+      ) : (
+        <Success />
+      )}
     </Container>
   );
 }

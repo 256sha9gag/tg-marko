@@ -6,9 +6,11 @@ import generateUniqueId from '../utils/generateId.js'
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import CountyAndCity from './CountyAndCity';
+import { useTelegram } from '../hooks/useTelegram.js';
 
-const FormWrapper = ({ username, tg }) => {
+const FormWrapper = ({ username, setIsSubmit }) => {
   const { t } = useTranslation();
+  const { queryId } = useTelegram();
   const [orderType, setOrderType] = useState('');
   const [asset, setAssets] = useState('');
   const [amount, setAmount] = useState('');
@@ -19,6 +21,7 @@ const FormWrapper = ({ username, tg }) => {
   const [comment, setComment] = useState('');
   
   const handleSubmit = async (e) => {
+    e.preventDefault();
     try {
       const id = generateUniqueId()
       const res = await axios.post('https://markoengine.space/data', {
@@ -32,7 +35,9 @@ const FormWrapper = ({ username, tg }) => {
         country,
         city,
         comment,
+        queryId
       });
+      setIsSubmit(true);
       setOrderType('');
       setAssets('');
       setAmount('');
@@ -41,11 +46,8 @@ const FormWrapper = ({ username, tg }) => {
       setCountry([]);
       setCity('');
       setComment('');
-      tg.sendData(`${t('orderCreate')} № ${id}`)
-      tg.close();
       console.log(res);
     } catch (error) {
-      tg.sendData(`${t('orderCreate')}`)
       console.log(error)
     }
   };
@@ -64,7 +66,7 @@ const FormWrapper = ({ username, tg }) => {
   };
   
   return (
-    <Form onSubmit={(e) => handleSubmit(e)}>
+    <Form action="" onSubmit={(e) => handleSubmit(e)}>
       <Form.Group className="mb-3 d-flex flex-column">
         <div>
           <Form.Check
@@ -99,7 +101,7 @@ const FormWrapper = ({ username, tg }) => {
           <option value="USD">USD</option>
           <option value="EUR">EUR</option>
           <option value="Local currency">Local currency</option>
-          <option value="USDT Tether TRC20<">USDT Tether TRC20</option>
+          <option value="USDT Tether TRC20">USDT Tether TRC20</option>
           <option value="USDT Tether ERC20">USDT Tether ERC20</option>
           <option value="BTC Bitcoin">BTC Bitcoin</option>
           <option value="ETH Ethereum">ETH Ethereum</option>
@@ -114,6 +116,7 @@ const FormWrapper = ({ username, tg }) => {
             aria-label="denomination"
             onChange={(e) => setDenomination(e.target.value)}
           >
+            <option value="notSelected">{t('notSelected')}</option>
             <option value="50">50</option>
             <option value="100">100</option>
             <option value="200">200</option>
